@@ -1,0 +1,11 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+include $(LOCAL_PATH)/android/jni/libusb.mk
+  LOCAL_C_INCLUDES += $(LIBUSB_ROOT_ABS)
+  LOCAL_SHARED_LIBRARIES += libusb1.0
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
+LOCAL_SRC_FILES := LibUSB.cpp
+LOCAL_MODULE := NAH_LIB_USB
+include $(BUILD_SHARED_LIBRARY)
+

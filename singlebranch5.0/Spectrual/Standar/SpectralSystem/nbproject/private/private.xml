@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/control/ifs/ISPDevControl.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/app/ora/CommonApp.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/control/ifs/ISPDevLightControl.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/data/SSAsyLightPar.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/control/inst/SPDevControl.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/data/SSynLightPar.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/drv/ISPDevSearch.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/app/manager/AppManager.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/control/ifs/ISPDataReceive.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/data/SSDataCollectPar.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/app/absorbe/SAbsData.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/app/manager/CollectControl.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/data/SSpectralDataPacket.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/drv/SPDevice.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/manager/SPDevManager.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/platform/SpectralPlatService.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/app/absorbe/AbsorbeApp.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/drv/ISPDevice.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/control/inst/SPLightControl.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/control/ifs/ISPDevConfig.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/drv/SPDevSearch.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/platform/SYSLOG.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/control/inst/SPDevConfig.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/control/inst/SPDataCollect.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/control/bill/KalManFilter.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/control/bill/DarkDataFilter.java</file>
+            <file>file:/D:/home/code/nahon/singlebranch5.0/Spectrual/Standar/SpectralSystem/src/sps/dev/control/ifs/ISPDataCollect.java</file>
+        </group>
+    </open-files>
+</project-private>

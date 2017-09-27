@@ -1,0 +1,46 @@
+九月 21, 2017 5:50:04 下午 sps.platform.SYSLOG PrintLog
+信息: 开始记录LOG
+九月 21, 2017 5:50:06 下午 nexus.device.control.DevManager$8 run
+信息: 进入搜索进程
+九月 21, 2017 5:50:43 下午 nahon.comm.faultsystem.FaultCenter SendFaultReport
+严重: 采集数据异常
+
+九月 21, 2017 5:50:43 下午 sps.app.manager.CollectControl$1 run
+严重: null
+nahon.drv.data.CancelException: Canceled
+	at nahon.pro.migp.MIGPNode.ReceiveMIGPPacket(MIGPNode.java:125)
+	at nahon.pro.migp.MIGP_CmdSend.ReceiveCMD(MIGP_CmdSend.java:71)
+	at nahon.pro.migp.MIGP_CmdSend.SendRPC(MIGP_CmdSend.java:55)
+	at nahon.pro.migp.MIGP_CmdSend.GetMEM(MIGP_CmdSend.java:150)
+	at nahon.drv.entry.MIGPNahonDriver.GetMEM(MIGPNahonDriver.java:85)
+	at spdev.drv.cmd.collect.DataCollectCmd.GetSPData(DataCollectCmd.java:20)
+	at sps.dev.drv.SPDevice.CollectData(SPDevice.java:120)
+	at sps.dev.control.inst.SPDataCollect.StartSingleTest(SPDataCollect.java:132)
+	at sps.app.manager.CollectControl$1.run(CollectControl.java:58)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+
+九月 21, 2017 5:50:49 下午 nahon.comm.faultsystem.FaultCenter SendFaultReport
+严重: 采集数据异常
+
+九月 21, 2017 5:50:49 下午 sps.app.manager.CollectControl$1 run
+严重: null
+nahon.drv.data.CancelException: Canceled
+	at nahon.pro.migp.MIGPNode.ReceiveMIGPPacket(MIGPNode.java:125)
+	at nahon.pro.migp.MIGP_CmdSend.ReceiveCMD(MIGP_CmdSend.java:71)
+	at nahon.pro.migp.MIGP_CmdSend.SendRPC(MIGP_CmdSend.java:55)
+	at nahon.pro.migp.MIGP_CmdSend.GetMEM(MIGP_CmdSend.java:150)
+	at nahon.drv.entry.MIGPNahonDriver.GetMEM(MIGPNahonDriver.java:85)
+	at spdev.drv.cmd.collect.DataCollectCmd.GetSPData(DataCollectCmd.java:20)
+	at sps.dev.drv.SPDevice.CollectData(SPDevice.java:120)
+	at sps.dev.control.inst.SPDataCollect.StartSingleTest(SPDataCollect.java:132)
+	at sps.app.manager.CollectControl$1.run(CollectControl.java:58)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+

@@ -1,0 +1,3 @@
+# List of generated media files. The columns are tab-separated:
+# id | media file type | display name | media file path
+179	windows	Windows	D:\home\code\nahon\singlebranch5.0\Spectrual\Solid\Windows\publish\output\车载农化智能检测系统_windows_1_0_1.exe

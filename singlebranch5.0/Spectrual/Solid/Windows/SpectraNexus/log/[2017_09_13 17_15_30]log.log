@@ -1,0 +1,24 @@
+九月 13, 2017 5:15:30 下午 sps.platform.SYSLOG PrintLog
+信息: 开始记录LOG
+九月 13, 2017 5:15:32 下午 nexus.device.control.DevManager$8 run
+信息: 进入搜索进程
+九月 13, 2017 5:15:34 下午 nahon.comm.faultsystem.FaultCenter SendFaultReport
+严重: 没有定标
+九月 13, 2017 5:15:34 下午 nahon.comm.faultsystem.FaultCenter SendFaultReport
+严重: 采集数据异常
+
+九月 13, 2017 5:15:34 下午 sps.dev.control.inst.SPDataCollect$3 run
+严重: null
+java.lang.Exception: 没有定标
+	at sps.app.solapp.CollectControl.InputData(CollectControl.java:80)
+	at sps.app.solapp.CollectControl.access$000(CollectControl.java:21)
+	at sps.app.solapp.CollectControl$2.ReceiveData(CollectControl.java:63)
+	at sps.dev.control.inst.SPDataCollect.SingleTestImpl(SPDataCollect.java:269)
+	at sps.dev.control.inst.SPDataCollect.access$500(SPDataCollect.java:31)
+	at sps.dev.control.inst.SPDataCollect$3.run(SPDataCollect.java:195)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+

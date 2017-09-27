@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updateDescriptor baseUrl="">
+  <entry targetMediaFileId="110" updatableVersionMin="" updatableVersionMax="" fileName="科健企业有限公司_windows_version_1_0.exe" newVersion="version 1.0" newMediaFileId="110" fileSize="38538752" bundledJre="windows-x86-1.7.0.1_standar" archive="false">
+    <comment />
+  </entry>
+</updateDescriptor>
+

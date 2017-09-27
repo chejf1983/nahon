@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updateDescriptor baseUrl="">
+  <entry targetMediaFileId="179" updatableVersionMin="" updatableVersionMax="" fileName="Raman_windows_1_0_8.exe" newVersion="1.0.8" newMediaFileId="179" fileSize="38571008" bundledJre="windows-x86-1.8.0_121" archive="false">
+    <comment language="en" />
+  </entry>
+</updateDescriptor>
+

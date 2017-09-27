@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updateDescriptor baseUrl="">
+  <entry targetMediaFileId="179" updatableVersionMin="" updatableVersionMax="" fileName="车载农化智能检测系统_windows_1_0_1.exe" newVersion="1.0.1" newMediaFileId="179" fileSize="39429120" bundledJre="windows-x86-1.8.0_121" archive="false">
+    <comment language="en" />
+  </entry>
+</updateDescriptor>
+

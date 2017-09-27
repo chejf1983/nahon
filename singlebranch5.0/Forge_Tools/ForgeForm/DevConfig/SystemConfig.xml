@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment/>
+<entry key="par1">2000</entry>
+<entry key="DIRPATH">./information/</entry>
+<entry key="par0">0</entry>
+<entry key="SERVERUSER">nahon</entry>
+<entry key="netType">USB</entry>
+<entry key="devaddr">0</entry>
+<entry key="SERVERDB">jdbc:mysql://192.168.1.110/nahon?characterEncoding=utf8</entry>
+<entry key="SERVERPASS">nahon</entry>
+<entry key="SERVERENABLE">true</entry>
+</properties>

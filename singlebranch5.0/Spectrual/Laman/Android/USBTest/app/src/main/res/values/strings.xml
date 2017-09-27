@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">USBTest</string>
+    <string name="title_activity_send_receive">send_receive</string>
+</resources>

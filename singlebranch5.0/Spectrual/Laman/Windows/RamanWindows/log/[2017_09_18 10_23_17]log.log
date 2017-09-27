@@ -1,0 +1,14 @@
+九月 18, 2017 10:23:17 上午 sps.platform.log.SYSLOG PrintLog
+信息: 开始记录LOG
+九月 18, 2017 10:23:19 上午 nexus.device.control.DevManager$8 run
+信息: 进入搜索进程
+九月 18, 2017 10:23:19 上午 nahon.comm.faultsystem.FaultCenter SendFaultReport
+严重: 没有找到设备
+九月 18, 2017 10:23:20 上午 nexus.device.control.DevManager$8 run
+信息: 进入搜索进程
+九月 18, 2017 10:23:21 上午 nahon.comm.faultsystem.FaultCenter SendFaultReport
+严重: 没有找到设备
+九月 18, 2017 10:23:21 上午 nexus.device.control.DevManager$8 run
+信息: 进入搜索进程
+九月 18, 2017 10:23:22 上午 nahon.comm.faultsystem.FaultCenter SendFaultReport
+严重: 没有找到设备
