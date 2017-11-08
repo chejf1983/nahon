@@ -9,7 +9,7 @@ import sps.platform.math.CruveSimilater.SlopPara;
 import java.util.ArrayList;
 
 /**
- *
+ * 寻峰
  * @author Administrator
  */
 public class MaxWavePointHelper {

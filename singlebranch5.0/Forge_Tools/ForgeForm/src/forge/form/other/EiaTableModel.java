@@ -66,7 +66,7 @@ public class EiaTableModel extends AbstractTableModel {
             return false;
         } else {
             //设备名称可以修改
-            if (rowIndex == 0) {
+            if (rowIndex == 0 || rowIndex == 2) {
                 return true;
             }
             
@@ -118,6 +118,9 @@ public class EiaTableModel extends AbstractTableModel {
                         length = aValue.toString().length() > BuildSerialNum_Length
                                 ? BuildSerialNum_Length : aValue.toString().length();
                         eiainfo.BuildSerialNum = aValue.toString().substring(0, length);
+                        break;
+                    case 2:
+                        eiainfo.BuildDate = aValue.toString();
                         break;
                 }
             } catch (Exception ex) {

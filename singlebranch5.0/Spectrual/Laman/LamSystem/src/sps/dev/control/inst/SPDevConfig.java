@@ -32,6 +32,9 @@ public class SPDevConfig implements ISPDevConfig {
         this.sppar = dev.GetSpectralPar();
         TimeUnit.MILLISECONDS.sleep(10);
         this.swpar = dev.GetWaveParameter();
+        if(this.swpar.C0 == 0){
+            this.swpar.C0 = 380;
+        }
         TimeUnit.MILLISECONDS.sleep(10);
         this.linearpar = dev.GetLinearPar();
         TimeUnit.MILLISECONDS.sleep(10);

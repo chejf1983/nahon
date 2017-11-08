@@ -11,6 +11,7 @@ import sps.dev.data.SSpectralDataPacket;
 import nahon.comm.filter.BattwoseFilter;
 import sps.dev.control.bill.DarkDataFilter;
 import sps.dev.control.bill.KalManFilter;
+import sps.dev.control.bill.LinearCal;
 import sps.dev.control.bill.SPDataBuilder;
 import sps.dev.control.bill.SmoothFilter;
 import sps.dev.control.bill.WindowSmoothFilter;
@@ -36,23 +37,15 @@ public class SPDataCollect implements ISPDataCollect {
     public void Init() throws Exception {
         this.collectpar = this.control.GetDevice().GetCollectPar();
         TimeUnit.MILLISECONDS.sleep(10);
+        
         //清空暗电流
         dkfilter.UpdateDKData(new double[0]);
 
-        //初始化巴特沃斯滤波器
-        SSpectralPar sppar = this.control.spdevconfig.sppar;
-        this.batfilter.InitBattwoseWindow(sppar.nodeNumber, sppar.nodeNumber / 10, 16);
-
-        this.kalfilter.InitKalman(sppar.nodeNumber);
-        
-        
-        //使能滤波
-        String isenable = SpectralPlatService.GetInstance().GetConfig().getProperty(EnableKey, "false");
-        this.SetFilterEnable(Boolean.valueOf(isenable));
-
         //使能非线性
-        isenable = SpectralPlatService.GetInstance().GetConfig().getProperty(LinearKey, "false");
+        String isenable = SpectralPlatService.GetInstance().GetConfig().getProperty(LinearKey, "false");
         this.SetLinearEnable(Boolean.valueOf(isenable));
+        
+        this.InitFilter();
     }
 
     // <editor-fold defaultstate="collapsed" desc="暗电流控制">
@@ -72,12 +65,13 @@ public class SPDataCollect implements ISPDataCollect {
 
     // <editor-fold defaultstate="collapsed" desc="采集控制">
     //初始化数据生成器
-    private SPDataBuilder builder = new SPDataBuilder();
+    private final SPDataBuilder builder = new SPDataBuilder();
     //初始化滑动平均
-    private WindowSmoothFilter windowfilter = new WindowSmoothFilter();
-
+    private final WindowSmoothFilter windowfilter = new WindowSmoothFilter();
+    //采集参数
     private SSDataCollectPar collectpar = null;
-
+    //获取采集参数
+    @Override
     public SSDataCollectPar GetCollectPar() throws Exception {
         if (this.control.GetControlState() != ISPDevControl.CSTATE.CLOSE) {
             return this.collectpar;
@@ -86,13 +80,7 @@ public class SPDataCollect implements ISPDataCollect {
         }
     }
 
-    private boolean isCancled = false;
-
-    @Override
-    public boolean IsCanceled() {
-        return this.isCancled;
-    }
-
+    //准备采集
     @Override
     public void PrepareCollect(SSDataCollectPar par) throws Exception {
         this.control.LockDevice();
@@ -108,6 +96,7 @@ public class SPDataCollect implements ISPDataCollect {
         this.isCancled = false;
     }
 
+    //停止采集
     @Override
     public void FinishCollect() {
         this.control.UnlockDevice();
@@ -126,19 +115,24 @@ public class SPDataCollect implements ISPDataCollect {
         }
     }
 
+    //获取光谱数据
     @Override
     public SSpectralDataPacket StartSingleTest(int window) throws Exception {
         ISPDevice dev = this.control.GetDevice();
+        //获取原始数据
         double[] oradata = dev.CollectData(this.control.GetSPDevConfig().GetSpectralPar().nodeNumber,
-                this.GetCollectTimeout(this.collectpar));
+                this.GetCollectTimeout(this.collectpar));//计算超时时间
+        //换算成光谱数据
         SSpectralDataPacket spdata = this.builder.BuildSPData(oradata, this.control.GetSPDevConfig().GetWaveParameter());
 
         //修正暗电流
         if (!this.IsDKEnable()) {
+            //关闭暗电流修正时，更新暗电流数据
             dkfilter.UpdateDKData(oradata);
 //            this.dkpar = this.collectpar;
         } else {
 //            if (dkpar.averageTime == this.collectpar.averageTime && dkpar.integralTime == this.collectpar.integralTime) {
+            //暗点流过滤
             this.dkfilter.Filter(spdata.data.datavalue);
 //            } else {
 //                this.SetDkEnable(false);
@@ -146,6 +140,10 @@ public class SPDataCollect implements ISPDataCollect {
         }
 
         //非线性校准
+        if(this.IsLinearEnable()){
+            new LinearCal().LinearCalibrate(spdata.data, this.control.spdevconfig.linearpar);
+        }
+        
         //巴特沃斯滤波
         if (this.batfilter.IsBatFilterEnable()) {
             spdata.data.datavalue = this.batfilter.Filter(spdata.data.datavalue);
@@ -161,6 +159,7 @@ public class SPDataCollect implements ISPDataCollect {
             this.smoothfilter.Filter(spdata.data.pixelIndex, spdata.data.datavalue);
         }
         
+        //卡尔曼滤波
         if(this.kalfilter.IsKalmanFilterEnable()){            
             spdata.data.datavalue = this.kalfilter.Filter(spdata.data.datavalue);
         }
@@ -181,6 +180,7 @@ public class SPDataCollect implements ISPDataCollect {
         return spdata;
     }
 
+    //停止采集数据
     @Override
     public void CancelCollectData() throws Exception{
         this.control.GetDevice().Cancel();
@@ -195,6 +195,13 @@ public class SPDataCollect implements ISPDataCollect {
         
         this.isCancled = true;
     }
+       
+    private boolean isCancled = false;
+    //是否取消采集
+    @Override
+    public boolean IsCanceled() {
+        return this.isCancled;
+    }
     // </editor-fold>    
 
     // <editor-fold defaultstate="collapsed" desc="滤波控制采集">  
@@ -202,10 +209,27 @@ public class SPDataCollect implements ISPDataCollect {
     private SmoothFilter smoothfilter = new SmoothFilter();
     //巴特沃斯滤波器
     private BattwoseFilter batfilter = new BattwoseFilter();
+    //卡尔曼滤波
     private KalManFilter kalfilter = new KalManFilter();
+    //滤波使能
     private boolean isfilterenable = false;
+    //滤波使能关键字
     private String EnableKey = "FilterEnable";
 
+    private void InitFilter(){       
+        //初始化巴特沃斯滤波器
+        SSpectralPar sppar = this.control.spdevconfig.sppar;
+        this.batfilter.InitBattwoseWindow(sppar.nodeNumber, sppar.nodeNumber / 10, 16);
+
+        //初始化卡尔曼滤波
+        this.kalfilter.InitKalman(sppar.nodeNumber);    
+        this.kalfilter.SetKalmanFilterEnable(false);
+        
+        //使能滤波
+        String isenable = SpectralPlatService.GetInstance().GetConfig().getProperty(EnableKey, "false");
+        this.SetFilterEnable(Boolean.valueOf(isenable));
+    }
+    
     @Override
     public boolean IsFilterEnable() {
         return isfilterenable;
@@ -216,7 +240,7 @@ public class SPDataCollect implements ISPDataCollect {
         if (value != this.IsFilterEnable()) {
             this.batfilter.SetBatFilterEnable(value);
             this.smoothfilter.SetSmoothEnable(value);
-            this.kalfilter.SetKalmanFilterEnable(value);
+//            this.kalfilter.SetKalmanFilterEnable(value);
             
             this.isfilterenable = this.batfilter.IsBatFilterEnable() || this.smoothfilter.IsSmoothEnable();
             SpectralPlatService.GetInstance().GetConfig().setProperty(EnableKey, String.valueOf(this.isfilterenable));
@@ -227,6 +251,7 @@ public class SPDataCollect implements ISPDataCollect {
 
     // <editor-fold defaultstate="collapsed" desc="非线性控制">
     private String LinearKey = "LinearEnable";
+    //非线性控制开关
     private boolean isLinearEnable = false;
 
     @Override

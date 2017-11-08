@@ -113,11 +113,11 @@ public class MIGPNode {
                     //计时器增加
                     timeindex += MAXTIMEOUT;
                     if (timeindex >= timeout) {
-                    //超时，返回空包
-                    //System.out.println("超时" + timeout);
-                    return null;
-                } 
-                }
+                        //超时，返回空包
+                        //System.out.println("超时" + timeout);
+                        return null;
+                    } 
+                }                
             }
 
             if (this.iscanceled) {

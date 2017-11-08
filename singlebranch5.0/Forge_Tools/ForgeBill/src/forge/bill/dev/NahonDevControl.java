@@ -14,6 +14,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import nahon.comm.event.EventCenter;
 import nahon.comm.faultsystem.FaultCenter;
+import nahon.comm.io.libs.WIOInfo;
+import nahon.comm.io.libs.WindowsIO;
 import nahon.comm.io.libs.WindowsIOFactory;
 import nahon.drv.absractio.AbstractIO;
 import nahon.drv.absractio.IOInfo;
@@ -52,7 +54,7 @@ public class NahonDevControl {
     // <editor-fold defaultstate="collapsed" desc="设备连接"> 
     private NahonDevice device;
 
-    private AbstractIO ConvertIO(final nahon.comm.io.libs.AbstractIO io) {
+    private AbstractIO ConvertIO(final AbstractIO io) {
         return new AbstractIO() {
             @Override
             public boolean IsClosed() {
@@ -91,14 +93,51 @@ public class NahonDevControl {
         };
     }
 
-    public void Connect(IOInfo ioinfo, byte devaddr) {
+    private static AbstractIO ConvertIO(final WindowsIO io) {
+        return new AbstractIO() {
+            @Override
+            public boolean IsClosed() {
+                return io.IsClosed();
+            }
+
+            @Override
+            public void Open() throws Exception {
+                io.Open();
+            }
+
+            @Override
+            public void Close() {
+                io.Close();
+            }
+
+            @Override
+            public void SendData(byte[] bytes) throws Exception {
+                io.SendData(bytes);
+            }
+
+            @Override
+            public int ReceiveData(byte[] bytes, int i) throws Exception {
+                return io.ReceiveData(bytes, i);
+            }
+
+            @Override
+            public IOInfo GetConnectInfo() {
+                return new IOInfo(io.GetConnectInfo().iotype, io.GetConnectInfo().par);
+            }
+
+            @Override
+            public int MaxBuffersize() {
+                return io.MaxBuffersize();
+            }
+        };
+    }
+    
+    public void Connect(final IOInfo ioinfo, byte devaddr) {
         if (this.State() == ControlState.DISCONNECT) {
             device = null;
             //创建物理口
-            nahon.comm.io.libs.AbstractIO io_instance = 
-                    WindowsIOFactory.CreateIO(
-                            new nahon.comm.io.libs.IOInfo(ioinfo.iotype, ioinfo.par));
-
+            AbstractIO io_instance = ConvertIO (WindowsIOFactory.CreateIO(
+                            new WIOInfo(ioinfo.iotype, ioinfo.par)));
 
             //创建设备
             device = new NahonDevice(new SConnectInfo(ConvertIO(io_instance), (byte) 0xEF, devaddr));

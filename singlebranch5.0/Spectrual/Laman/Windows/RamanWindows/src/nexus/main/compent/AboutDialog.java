@@ -61,7 +61,7 @@ public class AboutDialog extends javax.swing.JDialog {
         jLabel2.setText("Product Version:");
 
         jLabel5.setFont(new java.awt.Font("Arial Unicode MS", 0, 12)); // NOI18N
-        jLabel5.setText("Raman 1. 0. 8");
+        jLabel5.setText("Raman 1. 0. 10");
 
         javax.swing.GroupLayout aboutPanel1Layout = new javax.swing.GroupLayout(aboutPanel1);
         aboutPanel1.setLayout(aboutPanel1Layout);

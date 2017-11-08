@@ -12,7 +12,6 @@ import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import nahon.comm.io.libs.IO_COM;
 import nahon.comm.io.libs.WindowsIOFactory;
 import nahon.drv.absractio.IOInfo;
 

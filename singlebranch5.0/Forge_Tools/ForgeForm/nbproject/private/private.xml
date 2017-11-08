@@ -3,24 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/update/UpdateForm.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/languange/LanguageForm.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/main/customer/MainCustomer.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/main/internal/InternalAbout.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/binfactory/BinfileMakeForm.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/seteia/DBConfig.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/seteia/EIASetupPane.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/debug/MemoryConvert.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/other/InitPaneHelper.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/seteia/CustomEIASetupPane.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/resource/background.jpg</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/other/CommInfoDialog.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/debug/DebugPane.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/main/customer/CustomerAbout.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/other/EiaTableModel.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/binfactory/BinFileHeadModel.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/languange/LanguageModel.java</file>
-            <file>file:/D:/home/code/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/main/internal/MainInternal.java</file>
+            <file>file:/F:/GitHub/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/other/EiaTableModel.java</file>
+            <file>file:/F:/GitHub/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/main/internal/InternalAbout.java</file>
+            <file>file:/F:/GitHub/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/seteia/CustomEIASetupPane.java</file>
+            <file>file:/F:/GitHub/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/main/customer/MainCustomer.java</file>
+            <file>file:/F:/GitHub/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/main/internal/MainInternal.java</file>
+            <file>file:/F:/GitHub/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/other/CommInfoDialog.java</file>
+            <file>file:/F:/GitHub/nahon/singlebranch5.0/Forge_Tools/ForgeForm/src/forge/form/seteia/DBConfig.java</file>
         </group>
     </open-files>
 </project-private>

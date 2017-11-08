@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updateDescriptor baseUrl="">
+  <entry targetMediaFileId="110" updatableVersionMin="" updatableVersionMax="" fileName="杭州纳宏光电科技有限公司(内部工具)_windows_4_0_3.exe" newVersion="4.0.3" newMediaFileId="110" fileSize="38433280" bundledJre="windows-x86-1.8.0_121" archive="false">
+    <comment language="en" />
+  </entry>
+</updateDescriptor>
+
